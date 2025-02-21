@@ -15,6 +15,27 @@ export function Topics() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+      },
+    },
+  };
+
   return (
     <section ref={ref} className="py-32">
       <div className="container mx-auto px-4">
@@ -28,24 +49,31 @@ export function Topics() {
             >
               Topics
             </motion.h2>
-            <Link
-              href="/topics"
-              className="text-sm text-gray-500 hover:text-gray-700 mt-4 inline-flex items-center gap-2"
-            >
-              View All <span className="font-light">→</span>
-            </Link>
-          </div>
-
-          <div className="md:w-4/5">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-8"
             >
+              <Link
+                href="/topics"
+                className="text-sm text-gray-500 hover:text-gray-700 mt-4 inline-flex items-center gap-2"
+              >
+                View All <span className="font-light">→</span>
+              </Link>
+            </motion.div>
+          </div>
+
+          <motion.div
+            className="md:w-4/5"
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+          >
+            <div className="space-y-8">
               {topics.map((topic, index) => (
-                <div
+                <motion.div
                   key={index}
+                  variants={itemVariants}
                   className="border-b border-gray-200 pb-8 last:border-none"
                 >
                   <div className="flex items-center gap-4 mb-2">
@@ -74,10 +102,10 @@ export function Topics() {
                       More <span className="font-light">→</span>
                     </Link>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
