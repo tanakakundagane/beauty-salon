@@ -15,13 +15,13 @@ export function Concept() {
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1.2 }}
           className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#F8E4DD] -translate-y-1/4 translate-x-1/4"
         />
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 1.2, delay: 0.2 }}
           className="absolute top-20 right-40 w-32 h-32"
         >
           <div className="grid grid-cols-8 gap-2">
@@ -35,7 +35,7 @@ export function Concept() {
         <motion.div
           initial={{ opacity: 0, rotate: -90 }}
           animate={isInView ? { opacity: 1, rotate: -45 } : {}}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 1.2, delay: 0.3 }}
           className="absolute bottom-20 left-40"
         >
           <div className="w-32 h-48 border-2 border-white rounded-full" />

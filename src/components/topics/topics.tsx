@@ -31,7 +31,7 @@ export function Topics() {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 1.2,
       },
     },
   };
@@ -44,7 +44,7 @@ export function Topics() {
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 1.2 }}
               className="text-4xl font-light"
             >
               Topics

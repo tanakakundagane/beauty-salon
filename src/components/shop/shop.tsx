@@ -27,7 +27,7 @@ export function Shop() {
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 1.2 }}
           className="text-4xl font-light text-center mb-20"
         >
           Shop
@@ -39,7 +39,7 @@ export function Shop() {
               key={shop.id}
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              transition={{ duration: 1.2, delay: index * 0.3 }}
               className={`flex flex-col ${
                 index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
               } gap-12 items-stretch`}

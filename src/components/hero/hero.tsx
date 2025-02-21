@@ -20,6 +20,7 @@ export function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2 }}
           className="text-5xl md:text-7xl font-bold mb-4"
         >
           Beauty & Harmony
@@ -27,7 +28,7 @@ export function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
+          transition={{ duration: 1.2, delay: 0.4 }}
           className="text-xl md:text-2xl"
         >
           あなたの魅力を最大限に引き出す空間
